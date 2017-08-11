@@ -1,7 +1,7 @@
 (ns x278dev.core
   (:gen-class))
 
-(defn -main
+(defn main
   [& args]
   (println "__        __   _                            _           ____ ____
 \\ \\      / /__| | ___ ___  _ __ ___   ___  | |_ ___    / ___/ ___|
