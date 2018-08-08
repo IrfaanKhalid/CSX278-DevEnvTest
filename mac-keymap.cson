@@ -1,0 +1,28 @@
+# Allows using enter to select an autocomplete suggestion.
+'body':
+  'cmd-q': 'tabs:close-tab'
+  'ctrl-tab': 'pane:show-next-item'
+  'cmd-,': 'pane:show-next-item'
+  'cmd-o': 'advanced-open-file:toggle'
+  'cmd-m': 'command-palette:toggle'
+  'cmd-n': 'window:focus-next-pane'
+  'cmd-g':  'go-to-line:toggle'
+
+'.platform-darwin atom-text-editor[data-grammar~="clojure"].autocomplete-active':
+  'enter':          'autocomplete-plus:confirm'
+
+'.platform-darwin atom-text-editor[data-grammar~="clojure"]':
+  'cmd-i':          'atom-beautify:beautify-editor'
+  # Provides proper indentation when enter is pressed. (I disable normal lisp-paredit keybindings)
+  'enter':          'lisp-paredit:newline'
+
+'.platform-darwin atom-workspace atom-text-editor:not([mini])':
+  'cmd-enter': 'proto-repl:execute-block'
+  'cmd-r': 'proto-repl:remote-nrepl-connection'
+  'cmd-.': 'proto-repl:list-ns-vars-with-docs'
+  'cmd-d': 'proto-repl:print-var-documentation'
+  'cmd-l': 'proto-repl:load-current-file'
+  'cmd-t': 'proto-repl:run-tests-in-namespace'
+  # Override newline back to original for proto-repl
+'.platform-darwin ink-console atom-text-editor[data-grammar~="clojure"]':
+  'enter':          'editor:newline'

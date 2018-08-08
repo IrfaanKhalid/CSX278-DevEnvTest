@@ -1,0 +1,60 @@
+# Allows using enter to select an autocomplete suggestion.
+'body':
+  'ctrl-q': 'tabs:close-tab'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-,': 'pane:show-next-item'
+  'ctrl-o': 'advanced-open-file:toggle'
+  'ctrl-m': 'command-palette:toggle'
+  'ctrl-n': 'window:focus-next-pane'
+  'ctrl-g':  'go-to-line:toggle'
+
+'.platform-darwin atom-text-editor[data-grammar~="clojure"].autocomplete-active':
+  'enter':          'autocomplete-plus:confirm'
+
+'.platform-darwin atom-text-editor[data-grammar~="clojure"]':
+  'ctrl-i':          'atom-beautify:beautify-editor'
+  # Provides proper indentation when enter is pressed. (I disable normal lisp-paredit keybindings)
+  'enter':          'lisp-paredit:newline'
+
+'.platform-darwin atom-workspace atom-text-editor:not([mini])':
+  'ctrl-enter': 'proto-repl:execute-block'
+  'ctrl-r': 'proto-repl:remote-nrepl-connection'
+  'ctrl-.': 'proto-repl:list-ns-vars-with-docs'
+  'ctrl-d': 'proto-repl:print-var-documentation'
+  'ctrl-l': 'proto-repl:load-current-file'
+  'ctrl-t': 'proto-repl:run-tests-in-namespace'
+  # Override newline back to original for proto-repl
+'.platform-darwin ink-console atom-text-editor[data-grammar~="clojure"]':
+  'enter':          'editor:newline'
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
