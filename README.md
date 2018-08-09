@@ -43,12 +43,12 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
   ```
   8. Install joker from: https://github.com/candid82/joker and make sure it is on your path
 
-  9. Use the "apm" command to install linter-jocker: "apm linter-joker"
+  9. Use the "apm" command to install linter-jocker: "apm install linter-joker"
 
   10. Clone the CSX278-DevEnvTest repo by opening a terminal or command prompt, changing to a directory where you would like to store it, and then running the command:
 
   ```
-  git clone https://github.com/juleswhite/CSX278-DevEnvTestOpen
+  git clone https://github.com/juleswhite/CSX278-DevEnvTest
   ```
 
   11. Open a terminal or command prompt and change to the directory that you just cloned (make sure there is a “src” folder)
@@ -97,8 +97,9 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
   16. In Atom, open the file src/x278/core.clj
 
-  17. Press “Cmd + r” and make sure that a new Protorepl “repl” window opens
-  You should see a message like this:
+  17. Press “Cmd + r” (Mac) or "Ctrl + r" (Windows) (or run the Atom command "Proto Repl: Remote Nrepl Connection") 
+  and enter the port number that you wrote down from the nRepl step. A new Protorepl “repl” 
+  window should then open and you will see a message like this:
 
   ```
   REPL Instructions
