@@ -2,7 +2,7 @@
 
 ## Instructions
 
-  1. Download and install the Java JDK 1.8 (do not get the demo and samples version)
+  1. Download and install the Java JDK (1.8+) (do not get the demo and samples version)
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
   Check if Java is on your PATH by opening either a terminal or a command prompt and typing “java -version”
