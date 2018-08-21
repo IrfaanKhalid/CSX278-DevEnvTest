@@ -53,7 +53,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 {:user
  {:dependencies [[clj-stacktrace "0.2.8"]
                  [org.clojure/tools.trace "0.7.9"]
-                 [spyscope       "0.1.7-SNAPSHOT"]]
+                 [spyscope       "0.1.6"]]
   :repl-options {
                  :init (do (require 'clj-stacktrace.repl)
                            (set! *print-length* 50)
