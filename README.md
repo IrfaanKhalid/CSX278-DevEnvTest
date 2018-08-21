@@ -50,17 +50,18 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
       places (See here: https://github.com/technomancy/leiningen/issues/1910).
   
   ```clojure
-  {:user
-   {:dependencies [[clj-stacktrace "0.2.8"]
-                   [org.clojure/tools.trace "0.7.9"]
-                   [spyscope       "0.1.7-SNAPSHOT"]]
-    :repl-options {
-                   :init (do (require 'clj-stacktrace.repl)
-                             (require '[clojure.tools.trace :as t])
-                             (set! *print-length* 50)
-                             (set! *print-level* 3))
-                   :caught clj-stacktrace.repl/pst+}
-    :injections [(require 'spyscope.core)]}}
+{:user
+ {:dependencies [[clj-stacktrace "0.2.8"]
+                 [org.clojure/tools.trace "0.7.9"]
+                 [spyscope       "0.1.7-SNAPSHOT"]]
+  :repl-options {
+                 :init (do (require 'clj-stacktrace.repl)
+                           (set! *print-length* 50)
+                           (set! *print-level* 3))
+                 :caught clj-stacktrace.repl/pst+}
+  :injections [(require 'spyscope.core)
+               (require '[clojure.stacktrace :refer :all])
+               (require '[clojure.tools.trace :refer :all])]}}
   ```
 
   10. Clone the CSX278-DevEnvTest repo by opening a terminal or command prompt, changing to a directory where you would like to store it, and then running the command:
