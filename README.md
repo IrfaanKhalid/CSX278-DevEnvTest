@@ -36,14 +36,32 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
 
   6. Install Atom (https://atom.io/) -- Do not use an older version than 1.18 –  only the official latest version for the class will be supported.
 
-  7. Use the Atom package manager "apm" command to install these plugins from the command line (or you can do it manually through preferences install):
+  7. Use the Atom package manager "apm" command to install these plugins from the command line (or you can do it manually through preferences install -- make sure to install 0.9.0 for Ink and not 0.9.2+):
 
   ```
-  apm install platformio-ide-terminal parinfer lisp-paredit rainbow-delimiters proto-repl ink  atom-beautify atom-file-icons hasklig advanced-open-file
+  apm install platformio-ide-terminal parinfer lisp-paredit rainbow-delimiters proto-repl ink@0.9.0 atom-beautify atom-file-icons hasklig advanced-open-file
   ```
   8. Install joker from: https://github.com/candid82/joker and make sure it is on your path
 
   9. Use the "apm" command to install linter-jocker: "apm install linter-joker"
+  
+  10. Open ore create the .lein/profiles.clj file in your home directory and set its contents to what is shown 
+      below. On Mac, this is in ~/.lein on Windows, it is typically in c:/Users/.../.lein, but can be other 
+      places (See here: https://github.com/technomancy/leiningen/issues/1910).
+  
+  ```clojure
+  {:user
+   {:dependencies [[clj-stacktrace "0.2.8"]
+                   [org.clojure/tools.trace "0.7.9"]
+                   [spyscope       "0.1.7-SNAPSHOT"]]
+    :repl-options {
+                   :init (do (require 'clj-stacktrace.repl)
+                             (require '[clojure.tools.trace :as t])
+                             (set! *print-length* 50)
+                             (set! *print-level* 3))
+                   :caught clj-stacktrace.repl/pst+}
+    :injections [(require 'spyscope.core)]}}
+  ```
 
   10. Clone the CSX278-DevEnvTest repo by opening a terminal or command prompt, changing to a directory where you would like to store it, and then running the command:
 
