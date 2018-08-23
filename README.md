@@ -41,7 +41,7 @@ http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.h
   ```
   apm install platformio-ide-terminal parinfer lisp-paredit rainbow-delimiters proto-repl ink@0.9.0 atom-beautify atom-file-icons hasklig advanced-open-file
   ```
-  8. Install joker from: https://github.com/candid82/joker and make sure it is on your path
+  8. Install joker from: https://github.com/candid82/joker and make sure it is on your path
 
   9. Use the "apm" command to install linter-jocker: "apm install linter-joker"
   
